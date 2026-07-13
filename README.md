@@ -36,6 +36,7 @@ CareGuide 是一款致力于消除现代数字化医疗排斥、专为老年群�
 
 
 * **家庭关怀代办（Family Booking）：** 老年人如果无法独立完成，可一键将预约卡片或医疗卡绑定分享给微信聊天中的亲属，由子女远程帮其选择科室、医生和时间段，完成后自动同步回老人的小程序端。
+<img width="1842" height="893" alt="微信图片_20260714003859_1123_19" src="https://github.com/user-attachments/assets/1b8d19c8-35ae-4f03-95c1-6acbf486b16c" />
 
 
 
@@ -51,6 +52,7 @@ CareGuide 是一款致力于消除现代数字化医疗排斥、专为老年群�
 
 
 * **一键语音 AI 助手（Hold to Talk）：** 支持“长按说话”的口语化问诊辅助，患者只需说“我头痛”，AI 即可精准引导推荐至对应的科室。
+<img width="1887" height="828" alt="微信图片_20260714003846_1122_19" src="https://github.com/user-attachments/assets/375b1d8e-313e-4db4-bf33-8738b610823c" />
 
 
 
