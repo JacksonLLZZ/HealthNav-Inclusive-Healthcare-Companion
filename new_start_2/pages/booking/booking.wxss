@@ -1,0 +1,453 @@
+/* ===== Booking 页面 — 双卡片 + AI 问诊模块 ===== */
+
+.page {
+  padding: 28rpx 32rpx 24rpx;
+  background-color: #F5F9FC;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- 页面头部 ---------- */
+.page-header {
+  margin-bottom: 20rpx;
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-size: calc(54rpx * var(--ts) / 100);
+  font-weight: 900;
+  color: #1A2A3A;
+  display: block;
+  line-height: 1.2;
+}
+
+.page-sub {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  margin-top: 8rpx;
+}
+
+.page-sub-icon {
+  font-size: calc(28rpx * var(--bs) / 100);
+}
+
+.page-sub-text {
+  font-size: calc(30rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  line-height: 1.4;
+  letter-spacing: 1rpx;
+}
+
+/* ========== 顶部双卡片 ========== */
+.top-row {
+  display: flex;
+  gap: 20rpx;
+  flex-shrink: 0;
+  margin-bottom: 28rpx;
+}
+
+.half-card {
+  flex: 1;
+  background-color: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 24rpx 20rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  border: 2rpx solid #E0E6EC;
+}
+
+.half-card:active {
+  transform: scale(0.97);
+}
+
+.half-icon {
+  font-size: 48rpx;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quick-icon { background-color: #E8F5E9; }
+.family-icon { background-color: #FFF3E0; }
+
+.half-title {
+  font-size: calc(36rpx * var(--ts) / 100);
+  font-weight: 800;
+  color: #1A2A3A;
+  line-height: 1.2;
+}
+
+.half-desc {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #3D4F5E;
+  line-height: 1.2;
+}
+
+/* ========== AI Health Assistant（全宽卡片） ========== */
+.ai-section {
+  flex: 1;
+  background-color: #FFFFFF;
+  border-radius: 28rpx;
+  padding: 20rpx 24rpx 18rpx;
+  box-shadow: 0 8rpx 28rpx rgba(0, 0, 0, 0.08);
+  border: 2rpx solid #E0E6EC;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 12rpx;
+  flex-shrink: 0;
+}
+
+.ai-avatar {
+  font-size: 44rpx;
+  width: 72rpx;
+  height: 72rpx;
+  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ai-header-text { flex: 1; }
+
+.ai-title {
+  font-size: calc(36rpx * var(--ts) / 100);
+  font-weight: 800;
+  color: #1A2A3A;
+  display: block;
+  line-height: 1.2;
+}
+
+.ai-subtitle {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #0C3E5E;
+  display: block;
+  margin-top: 4rpx;
+  line-height: 1.2;
+}
+
+/* ===== 快捷胶囊 ===== */
+.quick-section {
+  flex-shrink: 0;
+  margin-bottom: 12rpx;
+}
+
+.quick-label {
+  font-size: calc(32rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  display: block;
+  margin-bottom: 12rpx;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.capsule-row {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 10rpx;
+}
+
+.capsule-tag {
+  font-size: calc(30rpx * var(--bs) / 100);
+  color: #0D5C3E;
+  background-color: #E8F5E9;
+  padding: 14rpx 16rpx;
+  border-radius: 60rpx;
+  line-height: 1.2;
+  border: 1rpx solid #C8E6C9;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.capsule-tag:active {
+  background-color: #C8E6C9;
+}
+
+/* ===== AI 启动按钮 ===== */
+.ai-start-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: linear-gradient(135deg, #1A7A5C, #2196F3);
+  color: #FFFFFF;
+  font-size: calc(36rpx * var(--bs) / 100);
+  font-weight: 800;
+  border-radius: 60rpx;
+  padding: 0;
+  letter-spacing: 2rpx;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.ai-start-btn::after { border: none; }
+.ai-start-btn:active { opacity: 0.85; }
+
+/* ========== Check-in Card ========== */
+.checkin-card {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 36rpx 28rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  border: 2rpx solid #E0E6EC;
+  flex-shrink: 0;
+}
+
+.checkin-card:active {
+  transform: scale(0.97);
+}
+
+.checkin-icon {
+  font-size: 48rpx;
+  width: 88rpx;
+  height: 88rpx;
+  background-color: #E8F5E9;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checkin-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.checkin-title {
+  font-size: calc(36rpx * var(--ts) / 100);
+  font-weight: 800;
+  color: #1A2A3A;
+  line-height: 1.2;
+}
+
+.checkin-desc {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  line-height: 1.2;
+}
+
+.checkin-arrow {
+  font-size: calc(48rpx * var(--bs) / 100);
+  color: #6A7A88;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* Medical Card icon (orange tint) */
+.med-icon {
+  background-color: #FFF3E0 !important;
+}
+
+.med-share-wrap {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background-color: #F0F4F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.med-share-wrap:active {
+  background-color: #E0E6EC;
+}
+
+.med-share-icon {
+  font-size: calc(36rpx * var(--bs) / 100);
+  line-height: 1;
+}
+
+/* ========== QR Code Modal ========== */
+.qr-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.qr-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.qr-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  width: 560rpx;
+  background-color: #FFFFFF;
+  border-radius: 32rpx;
+  padding: 48rpx 40rpx;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28rpx;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 16rpx 64rpx rgba(0, 0, 0, 0.2);
+}
+
+.qr-modal.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.qr-image {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 16rpx;
+}
+
+.qr-tip {
+  font-size: calc(30rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.qr-close {
+  font-size: calc(30rpx * var(--bs) / 100);
+  color: #FFFFFF;
+  background-color: #1A7A5C;
+  padding: 16rpx 60rpx;
+  border-radius: 60rpx;
+  font-weight: 700;
+  min-width: 200rpx;
+  text-align: center;
+}
+
+.qr-close:active {
+  opacity: 0.85;
+}
+
+/* ========== Family Booking 转发面板 ========== */
+.share-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.share-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.share-panel {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background-color: #FFFFFF;
+  border-radius: 32rpx 32rpx 0 0;
+  padding: 24rpx 32rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 -8rpx 32rpx rgba(0, 0, 0, 0.1);
+}
+
+.share-panel.visible {
+  transform: translateY(0);
+}
+
+.share-handle {
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #D0D8E0;
+  border-radius: 6rpx;
+  margin: 0 auto 20rpx;
+}
+
+.share-panel-title {
+  font-size: calc(32rpx * var(--ts) / 100);
+  font-weight: 700;
+  color: #1A2A3A;
+  display: block;
+  text-align: center;
+  margin-bottom: 28rpx;
+}
+
+.share-list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 28rpx;
+}
+
+.share-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+  padding: 12rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.share-item:active {
+  background-color: #F5F9FC;
+}
+
+.share-avatar {
+  font-size: 60rpx;
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #F0F4F8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-name {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  font-weight: 600;
+}
+
+.share-cancel {
+  text-align: center;
+  font-size: calc(30rpx * var(--bs) / 100);
+  color: #3D4F5E;
+  padding: 20rpx 0;
+  border-top: 1rpx solid #E8EDF2;
+}

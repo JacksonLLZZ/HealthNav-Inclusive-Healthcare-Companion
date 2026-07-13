@@ -1,0 +1,182 @@
+/* ===== Profile 页面 — 简约大气 · 适老设计 ===== */
+
+.page {
+  padding: 60rpx 40rpx 40rpx;
+  background-color: #F5F9FC;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- 头像区域 ---------- */
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.avatar-circle {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background-color: #E8EDF2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24rpx;
+  border: 4rpx solid #D0D8E0;
+}
+
+.avatar-placeholder {
+  font-size: 80rpx;
+}
+
+.greeting-text {
+  font-size: calc(52rpx * var(--ts) / 100);
+  font-weight: 800;
+  color: #1A2A3A;
+  display: block;
+  line-height: 1.3;
+}
+
+.hint-text {
+  font-size: calc(32rpx * var(--bs) / 100);
+  color: #3D4F5E;
+  display: block;
+  margin-top: 10rpx;
+}
+
+/* ---------- 表单卡片 ---------- */
+.form-card {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 32rpx;
+  padding: 48rpx 40rpx;
+  box-shadow: 0 6rpx 24rpx rgba(0, 0, 0, 0.06);
+  border: 2rpx solid #E8EDF2;
+}
+
+.form-group {
+  margin-bottom: 40rpx;
+}
+
+.form-label {
+  font-size: calc(36rpx * var(--bs) / 100);
+  font-weight: 700;
+  color: #1A2A3A;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.form-input {
+  width: 100%;
+  height: 110rpx;
+  background-color: #F5F9FC;
+  border-radius: 24rpx;
+  padding: 0 36rpx;
+  font-size: calc(38rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  border: 2rpx solid #E0E6EC;
+  box-sizing: border-box;
+}
+
+.input-placeholder {
+  color: #5A6A7A;
+  font-size: calc(34rpx * var(--bs) / 100);
+}
+
+/* ---------- 登录按钮 ---------- */
+.btn-login {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #1A7A5C;
+  color: #FFFFFF;
+  font-size: calc(40rpx * var(--bs) / 100);
+  font-weight: 800;
+  border-radius: 60rpx;
+  margin-top: 16rpx;
+  padding: 0;
+}
+
+.btn-login::after {
+  border: none;
+}
+
+.btn-login:active {
+  background-color: #146349;
+}
+
+/* ---------- 分割线 ---------- */
+.divider-row {
+  display: flex;
+  align-items: center;
+  margin: 40rpx 0 36rpx;
+}
+
+.divider-line {
+  flex: 1;
+  height: 2rpx;
+  background-color: #E0E6EC;
+}
+
+.divider-text {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #5A6A7A;
+  margin: 0 24rpx;
+}
+
+/* ---------- 微信登录 ---------- */
+.btn-wechat {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #07C160;
+  color: #FFFFFF;
+  font-size: calc(38rpx * var(--bs) / 100);
+  font-weight: 700;
+  border-radius: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  padding: 0;
+}
+
+.btn-wechat::after {
+  border: none;
+}
+
+.btn-wechat:active {
+  background-color: #06AD56;
+}
+
+.wechat-icon {
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* ---------- 注册引导 ---------- */
+.register-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36rpx;
+  gap: 8rpx;
+}
+
+.register-text {
+  font-size: calc(32rpx * var(--bs) / 100);
+  color: #3D4F5E;
+}
+
+.register-link {
+  font-size: calc(32rpx * var(--bs) / 100);
+  color: #1A7A5C;
+  font-weight: 700;
+}

@@ -1,0 +1,78 @@
+<view class="page">
+
+  <!-- 消息列表 -->
+  <scroll-view class="msg-list" scroll-y="{{true}}" scroll-into-view="bottom-anchor" scroll-with-animation="{{true}}">
+    <view class="msg-list-inner">
+
+      <!-- AI 欢迎 -->
+      <view class="msg-row ai">
+        <view class="msg-avatar">🤖</view>
+        <view class="msg-body">
+          <view class="msg-bubble ai-msg">
+            <text class="msg-text">Hello! I'm your AI health assistant. Please describe your symptoms, and I'll help you find the right clinic. You can also upload images (X-ray, photos, etc.) for me to analyze.</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 示例：用户文本 -->
+      <view class="msg-row user">
+        <view class="msg-body">
+          <view class="msg-bubble user-msg">
+            <text class="msg-text">I've had a severe headache for the past 3 days, especially in the morning.</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 示例：AI 回复 -->
+      <view class="msg-row ai">
+        <view class="msg-avatar">🤖</view>
+        <view class="msg-body">
+          <view class="msg-bubble ai-msg">
+            <text class="msg-text">I understand. Morning headaches can have several causes. Could you tell me:</text>
+            <view class="msg-list-detail">
+              <text class="msg-detail-item">• Is the pain on one side or both sides?</text>
+              <text class="msg-detail-item">• Do you feel nauseous?</text>
+              <text class="msg-detail-item">• Any changes in your vision?</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 示例：用户发图 -->
+      <view class="msg-row user">
+        <view class="msg-body">
+          <view class="msg-bubble user-msg">
+            <text class="msg-text">Here's my recent check-up report.</text>
+          </view>
+          <view class="msg-image">
+            <image class="msg-img" src="/images/consult/placeholder.png" mode="aspectFill" />
+          </view>
+        </view>
+      </view>
+
+      <!-- 锚点 -->
+      <view id="bottom-anchor"></view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部输入栏 -->
+  <view class="bottom-bar">
+    <view class="bar-inner">
+      <!-- 图片上传 -->
+      <view class="btn-image" bindtap="onPickImage">
+        <text class="btn-image-icon">🖼️</text>
+      </view>
+
+      <!-- 输入框 -->
+      <view class="input-wrap">
+        <input class="chat-input" placeholder="Describe your symptoms..." placeholder-class="input-ph" bindinput="onInput" value="{{inputText}}" />
+      </view>
+
+      <!-- 发送按钮 -->
+      <view class="btn-send {{inputText.trim() ? 'active' : ''}}" bindtap="onSend">
+        <text class="send-icon">➤</text>
+      </view>
+    </view>
+  </view>
+
+</view>

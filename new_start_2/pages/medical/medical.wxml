@@ -1,0 +1,47 @@
+<view class="page" style="--ts:{{titleScale}};--bs:{{bodyScale}}">
+  <view class="page-header">
+    <text class="page-title">Register Medical Card</text>
+    <text class="page-sub">Link your ID card for seamless medical visits</text>
+  </view>
+
+  <!-- ID Card Upload -->
+  <view class="section-block">
+    <text class="section-title">Upload ID Card</text>
+    <view class="upload-row">
+      <view class="upload-box" bindtap="uploadIDFront">
+        <image wx:if="{{idFront}}" class="upload-preview" src="{{idFront}}" mode="aspectFill"></image>
+        <view wx:else class="upload-placeholder">
+          <text class="upload-icon">📷</text>
+          <text class="upload-label">Front</text>
+        </view>
+      </view>
+      <view class="upload-box" bindtap="uploadIDBack">
+        <image wx:if="{{idBack}}" class="upload-preview" src="{{idBack}}" mode="aspectFill"></image>
+        <view wx:else class="upload-placeholder">
+          <text class="upload-icon">📷</text>
+          <text class="upload-label">Back</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Divider -->
+  <view class="divider-row">
+    <view class="divider-line"></view>
+    <text class="divider-text">OR</text>
+    <view class="divider-line"></view>
+  </view>
+
+  <!-- Face Auth -->
+  <button class="face-btn" bindtap="onFaceAuth">📱 Real-name Authentication</button>
+
+  <!-- Form -->
+  <view class="section-block">
+    <text class="section-title">Personal Information</text>
+    <input class="form-input" placeholder="Full Name" value="{{name}}" bindinput="onNameInput" />
+    <input class="form-input" placeholder="ID Number" value="{{idNumber}}" bindinput="onIdInput" type="idcard" />
+    <input class="form-input" placeholder="Phone Number" value="{{phone}}" bindinput="onPhoneInput" type="number" maxlength="11" />
+  </view>
+
+  <button class="submit-btn" bindtap="onSubmit">Submit</button>
+</view>

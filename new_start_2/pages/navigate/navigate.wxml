@@ -1,0 +1,23 @@
+<view class="page" style="--ts:{{titleScale}};--bs:{{bodyScale}}">
+
+  <view class="current-destination">
+    <text class="dest-label">Current Destination</text>
+    <text class="dest-text">Respiratory Dept Room 201</text>
+  </view>
+
+  <view class="nav-card">
+    <view class="nav-header" style="background-color: {{headerBgColor}};">
+      <text class="direction-text">{{directionText}}</text>
+      <view class="arrow-icon" style="transform: rotate({{rotateAngle}}deg);">⬆️</view>
+    </view>
+    <view class="nav-body">
+      <text class="detail-text">Take the <text class="highlight">Elevator</text> ahead to the <text class="highlight">11th Floor</text>.</text>
+    </view>
+  </view>
+
+  <view class="ai-section">
+    <text class="ai-hint">Need help? Talk to AI Assistant</text>
+    <button class="btn-voice" bindtouchstart="startRecording" bindtouchend="stopRecording">Hold to Talk</button>
+  </view>
+
+</view>

@@ -1,0 +1,107 @@
+<scroll-view class="page" scroll-y style="--ts:{{titleScale}};--bs:{{bodyScale}}">
+
+  <view class="page-header">
+    <text class="page-title">Book an Appointment</text>
+    <view class="page-sub">
+      <text class="page-sub-icon">❤️</text>
+      <text class="page-sub-text">Care with heart, book with ease — your trusted health companion</text>
+    </view>
+  </view>
+
+  <!-- ===== 顶部双卡片 ===== -->
+  <view class="top-row">
+    <view class="half-card" bindtap="onQuickBooking">
+      <view class="half-icon quick-icon">⚡</view>
+      <text class="half-title">Quick Booking</text>
+    </view>
+
+    <view class="half-card" bindtap="onFamilyBooking">
+      <view class="half-icon family-icon">👨‍👩‍👧‍👦</view>
+      <text class="half-title">Family Booking</text>
+    </view>
+  </view>
+
+  <!-- ===== Check-in Card ===== -->
+  <view class="checkin-card" bindtap="onCheckIn">
+    <view class="checkin-icon">📋</view>
+    <view class="checkin-info">
+      <text class="checkin-title">Check-in</text>
+      <text class="checkin-desc">Scan QR code to check in</text>
+    </view>
+    <text class="checkin-arrow">›</text>
+  </view>
+
+  <!-- ===== Medical Card ===== -->
+  <view class="checkin-card">
+    <view class="checkin-icon med-icon" bindtap="onBindMedicalCard">🏥</view>
+    <view class="checkin-info" bindtap="onBindMedicalCard">
+      <text class="checkin-title">Medical Card</text>
+      <text class="checkin-desc">Register your ID</text>
+    </view>
+    <view class="med-share-wrap" catchtap="onMedShare">
+      <text class="med-share-icon">📤</text>
+    </view>
+    <text class="checkin-arrow" bindtap="onBindMedicalCard">›</text>
+  </view>
+
+  <!-- ===== AI Health Assistant ===== -->
+  <view class="ai-section">
+    <view class="ai-header">
+      <view class="ai-avatar">🤖</view>
+      <view class="ai-header-text">
+        <text class="ai-title">AI Health Assistant</text>
+      </view>
+    </view>
+
+    <!-- 快捷提问 -->
+    <view class="quick-section">
+      <text class="quick-label">Try asking:</text>
+      <view class="capsule-row">
+        <text class="capsule-tag" bindtap="onQuickAsk" data-text="Headache">🤕 Headache</text>
+        <text class="capsule-tag" bindtap="onQuickAsk" data-text="Fever">🤒 Fever</text>
+      </view>
+      <view class="capsule-row">
+        <text class="capsule-tag" bindtap="onQuickAsk" data-text="Dizziness">😵 Dizziness</text>
+        <text class="capsule-tag" bindtap="onQuickAsk" data-text="Toothache">🦷 Toothache</text>
+      </view>
+    </view>
+
+    <!-- 启动按钮 -->
+    <button class="ai-start-btn" bindtap="onStartConsultation">Start Consultation</button>
+  </view>
+
+  <!-- ===== Family Booking 转发面板 ===== -->
+  <view class="share-overlay {{showSharePanel ? 'visible' : ''}}" bindtap="hideSharePanel"></view>
+  <view class="share-panel {{showSharePanel ? 'visible' : ''}}">
+    <view class="share-handle"></view>
+    <text class="share-panel-title">{{sharePanelTitle}}</text>
+    <view class="share-list">
+      <view class="share-item" bindtap="onShareTo" data-name="Mom">
+        <text class="share-avatar">👩</text>
+        <text class="share-name">Mom</text>
+      </view>
+      <view class="share-item" bindtap="onShareTo" data-name="Dad">
+        <text class="share-avatar">👨</text>
+        <text class="share-name">Dad</text>
+      </view>
+      <view class="share-item" bindtap="onShareTo" data-name="Spouse">
+        <text class="share-avatar">💑</text>
+        <text class="share-name">Spouse</text>
+      </view>
+      <view class="share-item" bindtap="onShareTo" data-name="Child">
+        <text class="share-avatar">🧒</text>
+        <text class="share-name">Child</text>
+      </view>
+    </view>
+    <view class="share-cancel" bindtap="hideSharePanel">Cancel</view>
+  </view>
+
+  <!-- ===== QR Code Modal ===== -->
+  <view class="qr-overlay {{showQRCode ? 'visible' : ''}}" bindtap="hideQRCode"></view>
+  <view class="qr-modal {{showQRCode ? 'visible' : ''}}">
+    <image class="qr-image" src="{{qrCodeSrc}}" mode="aspectFit"></image>
+    <text class="qr-tip">Show this QR code at the check-in machine</text>
+    <view class="qr-close" bindtap="hideQRCode">Close</view>
+  </view>
+
+</scroll-view>

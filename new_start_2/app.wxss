@@ -1,0 +1,22 @@
+/* ===== 全局样式 — 简约大气 · 适老设计 ===== */
+
+/* 统一盒子模型 */
+page {
+  --color-primary: #1A7A5C;
+  --color-primary-dark: #146349;
+  --color-bg: #F5F9FC;
+  --color-card: #FFFFFF;
+  --color-text: #1A2A3A;
+  --color-text-secondary: #6B7A88;
+  --color-border: #E8EDF2;
+
+  background-color: var(--color-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 禁用按钮默认边框 */
+button::after {
+  border: none;
+}

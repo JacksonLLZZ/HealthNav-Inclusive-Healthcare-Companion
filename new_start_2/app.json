@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/booking/booking",
+    "pages/map/map",
+    "pages/profile/profile",
+    "pages/consult/consult",
+    "pages/medical/medical",
+    "pages/book-detail/book-detail",
+    "pages/navigate/navigate"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "HealthNav",
+    "navigationBarBackgroundColor": "#F5F9FC"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#1A7A5C",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/booking/booking",
+        "text": "Booking",
+        "iconPath": "images/tab/booking.png",
+        "selectedIconPath": "images/tab/booking_hl.png"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "Clinic",
+        "iconPath": "images/tab/clinic.png",
+        "selectedIconPath": "images/tab/clinic_hl.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "Profile",
+        "iconPath": "images/tab/profile.png",
+        "selectedIconPath": "images/tab/profile_hl.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,46 @@
+<view class="page" style="--ts:{{titleScale}};--bs:{{bodyScale}}">
+
+  <!-- ===== 用户头像 / 占位 ===== -->
+  <view class="avatar-section">
+    <view class="avatar-circle">
+      <text class="avatar-placeholder">👤</text>
+    </view>
+    <text class="greeting-text">Welcome, Guest</text>
+    <text class="hint-text">Sign in to manage your appointments</text>
+  </view>
+
+
+  <!-- ===== 登录表单 ===== -->
+  <view class="form-card">
+    <view class="form-group">
+      <text class="form-label">Account</text>
+      <input class="form-input" placeholder="Enter your account" placeholder-class="input-placeholder"
+        bindinput="onAccountInput" />
+    </view>
+
+    <view class="form-group">
+      <text class="form-label">Password</text>
+      <input class="form-input" password="{{true}}" placeholder="Enter your password" placeholder-class="input-placeholder"
+        bindinput="onPasswordInput" />
+    </view>
+
+    <button class="btn-login" bindtap="onLogin">Sign In</button>
+
+    <view class="divider-row">
+      <view class="divider-line"></view>
+      <text class="divider-text">or</text>
+      <view class="divider-line"></view>
+    </view>
+
+    <button class="btn-wechat" bindtap="onWechatLogin">
+      <text class="wechat-icon">💬</text>
+      <text>WeChat Login</text>
+    </button>
+
+    <view class="register-row">
+      <text class="register-text">Don't have an account?</text>
+      <text class="register-link" bindtap="onRegister">Register now</text>
+    </view>
+  </view>
+
+</view>

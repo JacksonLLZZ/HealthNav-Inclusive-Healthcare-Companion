@@ -1,0 +1,55 @@
+<view class="container">
+  
+  <view class="card step-card">
+    <text class="card-title">Current Step</text>
+    <text class="step-content">Go to Respiratory Dept Room 201, wait for consultation.</text>
+  </view>
+
+  <view class="card queue-card">
+    <text class="card-title">Queue Status</text>
+    <view class="queue-info">
+      <view class="queue-item">
+        <text class="queue-label">People Ahead</text>
+        <text class="queue-number highlight-orange">{{queueCount}}</text>
+      </view>
+      <view class="divider"></view>
+      <view class="queue-item">
+        <text class="queue-label">Est. Wait</text>
+        <text class="queue-number highlight-blue">{{waitTime}} <text class="unit">min</text></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card settings-card">
+    <view class="switch-row">
+      <text class="switch-label">Sound Reminder</text>
+      <switch checked="{{soundEnabled}}" bindchange="toggleSound" color="#003366" />
+    </view>
+    <view class="switch-row border-top">
+      <text class="switch-label">Flashlight Reminder</text>
+      <switch checked="{{flashEnabled}}" bindchange="toggleFlash" color="#003366" />
+    </view>
+  </view>
+
+  <view class="bottom-actions">
+    <button class="btn-nav" bindtap="startNavigation">
+      <text class="btn-icon">🗺️</text>Navigation
+    </button>
+
+    <view class="ai-bar">
+      <text class="ai-hint">Need help? Talk to AI Assistant</text>
+      <button class="btn-voice" bindtouchstart="startRecording" bindtouchend="stopRecording">
+        🎤 Hold to Talk
+      </button>
+    </view>
+  </view>
+
+  <!-- 隐藏摄像头，仅用于控制闪光灯 -->
+  <camera 
+    id="flashCamera"
+    flash="{{flashMode}}"
+    class="hidden-camera"
+    device-position="back"
+    binderror="onCameraError"
+  />
+</view>

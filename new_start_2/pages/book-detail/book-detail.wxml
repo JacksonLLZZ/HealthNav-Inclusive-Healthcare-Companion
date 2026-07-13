@@ -1,0 +1,83 @@
+<view class="page" style="--ts:{{titleScale}};--bs:{{bodyScale}}">
+
+  <view class="page-header">
+    <text class="page-title">New Booking</text>
+    <text class="page-sub">Select department, doctor and time slot</text>
+  </view>
+
+  <!-- ===== 1. Department ===== -->
+  <view class="section">
+    <text class="section-title">Department</text>
+    <view class="dept-row">
+      <view wx:for="{{departments}}" wx:key="index"
+        class="dept-tag {{selectedDept === item ? 'active' : ''}}"
+        bindtap="onSelectDept" data-dept="{{item}}">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- ===== 2. Doctor ===== -->
+  <view class="section">
+    <text class="section-title">Doctor</text>
+    <view wx:if="{{filteredDoctors.length > 0}}" class="doctor-list">
+      <view wx:for="{{filteredDoctors}}" wx:key="name"
+        class="doctor-item {{selectedDoctor === item.name ? 'active' : ''}}"
+        bindtap="onSelectDoctor" data-doctor="{{item.name}}">
+        <view class="doctor-avatar">{{'👨‍⚕️'}}</view>
+        <view class="doctor-info">
+          <text class="doctor-name">{{item.name}}</text>
+          <text class="doctor-dept">{{item.dept}}</text>
+        </view>
+        <text class="doctor-check {{selectedDoctor === item.name ? 'visible' : ''}}">✓</text>
+      </view>
+    </view>
+    <view wx:else class="empty-hint">No doctors available for this department</view>
+  </view>
+
+  <!-- ===== 3. Time Slot ===== -->
+  <view class="section">
+    <text class="section-title">Time Slot</text>
+    <view wx:if="{{selectedDoctor && currentSlots.length > 0}}" class="slot-row">
+      <view wx:for="{{currentSlots}}" wx:key="slot"
+        class="slot-tag {{selectedTime === item ? 'active' : ''}}"
+        bindtap="onSelectTime" data-slot="{{item}}">{{item}}</view>
+    </view>
+    <view wx:else class="empty-hint">Please select a doctor first</view>
+  </view>
+
+  <!-- ===== 4. Appointment Summary ===== -->
+  <view wx:if="{{selectedDoctor && selectedTime}}" class="summary-card">
+    <text class="summary-card-title">📋 Appointment Summary</text>
+    <view class="summary-row">
+      <text class="summary-label">Doctor</text>
+      <text class="summary-value">{{selectedDoctor}}</text>
+    </view>
+    <view class="summary-row">
+      <text class="summary-label">Department</text>
+      <text class="summary-value">{{selectedDept}}</text>
+    </view>
+    <view class="summary-row">
+      <text class="summary-label">Location</text>
+      <text class="summary-value">{{selectedLocation}}</text>
+    </view>
+    <view class="summary-row">
+      <text class="summary-label">Time</text>
+      <text class="summary-value">{{selectedTime}}</text>
+    </view>
+  </view>
+
+  <!-- ===== Bottom Bar (Confirm only) ===== -->
+  <view class="bottom-bar">
+    <button class="confirm-btn" disabled="{{!selectedTime}}" bindtap="onConfirm">Confirm</button>
+  </view>
+
+  <!-- ===== Success Modal ===== -->
+  <view class="success-overlay {{showSuccess ? 'visible' : ''}}" bindtap="hideSuccess"></view>
+  <view class="success-modal {{showSuccess ? 'visible' : ''}}">
+    <text class="success-icon">✅</text>
+    <text class="success-title">Booking Confirmed</text>
+    <text class="success-info">{{selectedDoctor}} · {{selectedTime}}</text>
+    <text class="success-dept">{{selectedDept}}</text>
+    <button class="home-btn" bindtap="goHome">Return</button>
+  </view>
+
+</view>

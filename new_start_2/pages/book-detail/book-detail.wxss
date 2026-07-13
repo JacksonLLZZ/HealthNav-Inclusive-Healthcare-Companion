@@ -1,0 +1,349 @@
+/* ===== Booking Detail Page ===== */
+
+.page {
+  padding: 28rpx 32rpx 160rpx;
+  background-color: #F5F9FC;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
+.page-header {
+  margin-bottom: 24rpx;
+}
+
+.page-title {
+  font-size: calc(54rpx * var(--ts) / 100);
+  font-weight: 900;
+  color: #1A2A3A;
+  display: block;
+  line-height: 1.2;
+}
+
+.page-sub {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #3D4F5E;
+  margin-top: 8rpx;
+  display: block;
+  line-height: 1.3;
+}
+
+/* ---------- Section ---------- */
+.section {
+  background-color: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 28rpx 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  border: 2rpx solid #E0E6EC;
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  font-size: calc(32rpx * var(--ts) / 100);
+  font-weight: 800;
+  color: #1A2A3A;
+  display: block;
+  margin-bottom: 20rpx;
+  line-height: 1.2;
+}
+
+/* ---------- Department Tags ---------- */
+.dept-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+}
+
+.dept-tag {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  background-color: #F5F9FC;
+  padding: 16rpx 28rpx;
+  border-radius: 60rpx;
+  border: 2rpx solid #E0E6EC;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.dept-tag:active {
+  background-color: #E8F5E9;
+}
+
+.dept-tag.active {
+  color: #FFFFFF;
+  background-color: #1A7A5C;
+  border-color: #1A7A5C;
+  font-weight: 700;
+}
+
+/* ---------- Doctor List ---------- */
+.doctor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.doctor-item {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 24rpx 20rpx;
+  border-radius: 20rpx;
+  background-color: #F5F9FC;
+  border: 2rpx solid #E8EDF2;
+}
+
+.doctor-item:active {
+  background-color: #E8F5E9;
+}
+
+.doctor-item.active {
+  background-color: #E8F5E9;
+  border-color: #1A7A5C;
+}
+
+.doctor-avatar {
+  font-size: 44rpx;
+  flex-shrink: 0;
+}
+
+.doctor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.doctor-name {
+  font-size: calc(34rpx * var(--ts) / 100);
+  font-weight: 800;
+  color: #1A2A3A;
+  line-height: 1.2;
+}
+
+.doctor-dept {
+  font-size: calc(26rpx * var(--bs) / 100);
+  color: #3D4F5E;
+  line-height: 1.2;
+}
+
+.doctor-check {
+  font-size: 40rpx;
+  color: #1A7A5C;
+  font-weight: 800;
+  opacity: 0;
+  flex-shrink: 0;
+}
+
+.doctor-check.visible {
+  opacity: 1;
+}
+
+/* ---------- Time Slots ---------- */
+.slot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+}
+
+.slot-tag {
+  font-size: calc(36rpx * var(--bs) / 100);
+  color: #1A7A5C;
+  background-color: #E8F5E9;
+  padding: 14rpx 28rpx;
+  border-radius: 60rpx;
+  border: 2rpx solid #C8E6C9;
+  line-height: 1.2;
+  min-width: 100rpx;
+  text-align: center;
+  font-weight: 500;
+}
+
+.slot-tag:active {
+  background-color: #C8E6C9;
+}
+
+.slot-tag.active {
+  color: #FFFFFF;
+  background-color: #1A7A5C;
+  border-color: #1A7A5C;
+  font-weight: 700;
+}
+
+.empty-hint {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #5A6A7A;
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+/* ---------- Appointment Summary Card ---------- */
+.summary-card {
+  background-color: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 28rpx 28rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  border: 2rpx solid #E0E6EC;
+  margin-bottom: 24rpx;
+}
+
+.summary-card-title {
+  font-size: calc(32rpx * var(--ts) / 100);
+  font-weight: 800;
+  color: #1A2A3A;
+  display: block;
+  margin-bottom: 20rpx;
+  line-height: 1.2;
+}
+
+.summary-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 16rpx 0;
+  border-bottom: 2rpx solid #F0F4F8;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #3D4F5E;
+  width: 180rpx;
+  flex-shrink: 0;
+  line-height: 1.4;
+  padding-right: 20rpx;
+}
+
+.summary-value {
+  font-size: calc(30rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  font-weight: 700;
+  line-height: 1.2;
+  flex: 1;
+}
+
+/* ---------- Bottom Bar (Confirm only) ---------- */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  padding: 24rpx 32rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -8rpx 32rpx rgba(0, 0, 0, 0.1);
+  border-top: 2rpx solid #E0E6EC;
+  z-index: 100;
+}
+
+.confirm-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: linear-gradient(135deg, #1A7A5C, #2196F3);
+  color: #FFFFFF;
+  font-size: calc(34rpx * var(--bs) / 100);
+  font-weight: 800;
+  border-radius: 60rpx;
+  letter-spacing: 2rpx;
+  margin-top: auto;
+  padding: 0;
+}
+.confirm-btn::after { border: none; }
+.confirm-btn:active { opacity: 0.85; }
+
+.confirm-btn[disabled] {
+  opacity: 0.4;
+}
+
+/* ---------- Success Modal ---------- */
+.success-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.success-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.success-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  width: 560rpx;
+  background-color: #FFFFFF;
+  border-radius: 32rpx;
+  padding: 56rpx 40rpx 40rpx;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 16rpx 64rpx rgba(0, 0, 0, 0.2);
+}
+
+.success-modal.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.success-icon {
+  font-size: 80rpx;
+  margin-bottom: 12rpx;
+}
+
+.success-title {
+  font-size: calc(40rpx * var(--ts) / 100);
+  font-weight: 900;
+  color: #1A7A5C;
+  line-height: 1.2;
+}
+
+.success-info {
+  font-size: calc(34rpx * var(--bs) / 100);
+  color: #1A2A3A;
+  font-weight: 700;
+  margin-top: 8rpx;
+  line-height: 1.2;
+}
+
+.success-dept {
+  font-size: calc(28rpx * var(--bs) / 100);
+  color: #3D4F5E;
+  line-height: 1.2;
+  margin-bottom: 20rpx;
+}
+
+.home-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: linear-gradient(135deg, #1A7A5C, #2196F3);
+  color: #FFFFFF;
+  font-size: calc(34rpx * var(--bs) / 100);
+  font-weight: 800;
+  border-radius: 60rpx;
+  letter-spacing: 2rpx;
+  margin-top: 12rpx;
+  padding: 0;
+}
+
+.home-btn::after { border: none; }
+.home-btn:active { opacity: 0.85; }

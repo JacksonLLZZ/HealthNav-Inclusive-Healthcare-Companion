@@ -1,0 +1,84 @@
+<scroll-view class="page" scroll-y style="--ts:{{titleScale}};--bs:{{bodyScale}}">
+
+  <!-- ===== 1. Current Step ===== -->
+  <view class="module-card">
+    <view class="module-header">
+      <text class="module-icon">📍</text>
+      <text class="module-title">Current Step</text>
+    </view>
+    <text class="step-main">Go to Building A · 2F</text>
+    <text class="step-sub">Respiratory Clinic · Room 201</text>
+  </view>
+
+  <!-- ===== 2. Queue Status ===== -->
+  <view class="module-card">
+    <view class="module-header">
+      <text class="module-icon">⏳</text>
+      <text class="module-title">Queue Status</text>
+    </view>
+    <view class="queue-split">
+      <view class="queue-left">
+        <text class="queue-number">{{queueAhead}}</text>
+        <text class="queue-label">people ahead</text>
+      </view>
+      <view class="queue-divider"></view>
+      <view class="queue-right">
+        <text class="queue-time">~{{queueMinutes}}</text>
+        <text class="queue-label">estimated min</text>
+      </view>
+    </view>
+    <view class="queue-bar">
+      <view class="queue-bar-fill" style="width: {{queuePercent}}%;"></view>
+    </view>
+  </view>
+
+  <!-- ===== 3. Sound Reminder ===== -->
+  <view class="module-card reminder-card">
+    <view class="reminder-row">
+      <view class="reminder-left">
+        <text class="reminder-icon">🔊</text>
+        <view class="reminder-info">
+          <text class="reminder-title">Sound Reminder</text>
+        </view>
+      </view>
+      <switch class="reminder-switch" checked="{{soundEnabled}}" bindchange="onSoundToggle" color="#1A7A5C" />
+    </view>
+  </view>
+
+  <!-- ===== 4. Flashlight Reminder ===== -->
+  <view class="module-card reminder-card">
+    <view class="reminder-row">
+      <view class="reminder-left">
+        <text class="reminder-icon">🔦</text>
+        <view class="reminder-info">
+          <text class="reminder-title">Flashlight Reminder</text>
+        </view>
+      </view>
+      <switch class="reminder-switch" checked="{{flashEnabled}}" bindchange="onFlashToggle" color="#1A7A5C" />
+    </view>
+  </view>
+
+  <!-- ===== 5. Navigation ===== -->
+  <view class="module-card nav-trigger" bindtap="onNavigate">
+    <view class="nav-trigger-row">
+      <view class="nav-trigger-left">
+        <text class="nav-trigger-icon">🧭</text>
+        <view class="nav-trigger-info">
+          <text class="nav-trigger-title">Navigation</text>
+        </view>
+      </view>
+      <text class="nav-trigger-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- ===== 6. Hold to Talk ===== -->
+  <view class="ai-section">
+    <text class="ai-hint">Need help? Talk to AI Assistant</text>
+    <button class="btn-voice" bindtouchstart="startRecording" bindtouchend="stopRecording">Hold to Talk</button>
+  </view>
+
+  <!-- Hidden camera for real flashlight control -->
+  <!-- <camera flash="{{flashMode}}" device-position="back" class="hidden-camera"></camera> -->
+  <camera wx:if="{{isCameraReady}}" flash="{{flashMode}}" device-position="back" class="hidden-camera"></camera>
+
+</scroll-view>
